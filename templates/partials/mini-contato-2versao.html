@@ -1,7 +1,7 @@
 {% load static %}
 				<!-- Form Section
-				============================================= -->
-				<div class="section m-0" style="background: url('{% static 'demos/seo/images/sections/1.jpg' %}') no-repeat center center; background-size: cover; padding: 100px 0;">
+				============================================= 
+				<div class="section m-0 position-relative" style="background: url('{% static 'demos/seo/images/sections/1.jpg' %}') no-repeat center center; background-size: cover; padding: 100px 0;">
 					<div class="container">
 						<div class="row justify-content-between align-items-center">
 
@@ -17,9 +17,9 @@
 								<div class="card shadow-sm">
 									<div class="card-body">
 										<h4 class="mb-3">Fale conosco</h4>
-										<div class="position-absolute top-0 start-50 translate-middle" id="alerta">
-										</div>
 										<div class="form-widget">
+											<div class="position-absolute top-0 start-50 translate-middle" id="alerta">
+											</div>
 											<form class="row mb-0" id="template-contactform" name="template-contactform" action="" method="post">
 												{% csrf_token %}
 												<div class="col-12 form-group mb-3">
@@ -55,7 +55,55 @@
 						</div>
 
 					</div>
+				</div>-->
+				
+				<div class="section bg-transparent clearfix" style="padding: 80px 0">
+					<div class="container">
+						<div class="row justify-content-between align-items-center">
+							<div class="col-lg-5 col-md-6 mt-0 mt-md-4">
+								<div class="feature-box fbox-plain fbox-sm">
+									<div class="fbox-icon">
+										<i class="icon-line2-magic-wand"></i>
+									</div>
+									<div class="fbox-content">
+										<h3>Easily Manage Your Works</h3>
+										<p>Quickly impact virtual testing procedures vis-a-vis viral e-commerce. Completely myocardinate seamless.</p>
+									</div>
+								</div>
+
+								<div class="feature-box fbox-plain fbox-sm">
+									<div class="fbox-icon">
+										<i class="icon-line2-clock"></i>
+									</div>
+									<div class="fbox-content">
+										<h3>24x7 Access</h3>
+										<p>Authoritatively create one-to-one relationships for B2B "outside the box" thinking. Dramatically seize.</p>
+									</div>
+								</div>
+
+								<div class="feature-box fbox-plain fbox-sm mb-0">
+									<div class="fbox-icon">
+										<i class="icon-line2-speech"></i>
+									</div>
+									<div class="fbox-content">
+										<h3>Great Community</h3>
+										<p>Proactively evolve user-centric paradigms rather than exceptional core. Authoritatively brand unique.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-5 col-md-6 mt-5 mt-md-0">
+								<h2 class="ls0">Get One Day Free Trial.</h2>
+								<p class="text-muted mb-5" style="font-size: 18px;">Enthusiastically embrace diverse e-markets after sustainable applications. Collaboratively impact intermandated systems vis-a-vis progressive information.</p>
+								<div class="d-flex">
+									<a href="{% url 'sobre' %}" class="button button-rounded button-xlarge d-block flex-fill m-0 center nott fw-semibold ls0">Saiba Mais</a>
+									<a href="{% url 'contato' %}" class="button button-rounded button-xlarge d-block flex-fill button-border m-0 ms-3 center nott fw-semibold ls0">Entre em Contato</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+<!--
 				<script type="text/javascript">
 					function manda_comentario() {
 						$.post(
@@ -81,4 +129,4 @@
 						);
 
 					}
-				</script>
+				</script>-->

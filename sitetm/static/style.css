@@ -16802,3 +16802,7 @@ label.checkbox { padding-left: 20px; }
 }
 
 
+@media only screen AND (min-width: 768px) {
+  .espacamento { 
+    margin-top: 3rem !important;
+}

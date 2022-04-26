@@ -456,3 +456,9 @@ input.switch-toggle-round + label::after { border-radius: 4px }
 	background-size: cover;
 	background-position: 50% 50%;
 }
+
+
+
+.fbox-plain.fbox-sm {
+	margin-bottom: 40px;
+}
