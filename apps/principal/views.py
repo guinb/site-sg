@@ -5,7 +5,7 @@ from django.core.mail import send_mail
 from .models import Contato, EmailNewsletter
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'construcao.html')
 
 def sobre(request):
     return render(request, 'sobre.html')
