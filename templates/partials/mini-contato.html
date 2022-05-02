@@ -58,27 +58,41 @@
 				</div>
 				<script type="text/javascript">
 					function manda_comentario() {
-						$.post(
-							'/mensagem/',{
-								reply: false,
-								csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
-								nome: $('input[name="form_nome"]').val(),
-								email: $('input[name="form_email"]').val(),
-								empresa: $('input[name="form_empresa"]').val()
-							},
-							function (data) {
-								var divMae = document.getElementById('alerta')
-								var wrapper = document.createElement('div')
-								if (data == 'Aguarde nosso contato!'){
-									document.getElementById("template-contactform").reset();
-									wrapper.innerHTML = '<div class="alert alert-success alert-dismissible" role="alert"><i class="icon-thumbs-up"></i> ' + data + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
-									divMae.append(wrapper)
-								} else {
-									wrapper.innerHTML = '<div class="alert alert-danger alert-dismissible" role="alert"><i class="icon-remove"></i> ' + data + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
-								  	divMae.append(wrapper)
+						function validateEmail(email) {
+							var re = /\S+@\S+/;
+							return re.test(email);
+						}
+						var nome = document.getElementById("form_nome").value;
+						var email = document.getElementById("form_email").value;
+						var empresa = document.getElementById("form_empresa").value;
+						if (nome == '') {
+							document.getElementById("form_nome").focus();
+						} else if (!validateEmail(email)) {
+							document.getElementById("email-newsletter").focus();
+						} else if (empresa == '') {
+							document.getElementById("form_empresa").focus();
+						} else {
+							$.post(
+								'/mensagem/',{
+									reply: false,
+									csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+									nome: $('input[name="form_nome"]').val(),
+									email: $('input[name="form_email"]').val(),
+									empresa: $('input[name="form_empresa"]').val()
+								},
+								function (data) {
+									var divMae = document.getElementById('alerta')
+									var wrapper = document.createElement('div')
+									if (data == 'Aguarde nosso contato!'){
+										document.getElementById("template-contactform").reset();
+										wrapper.innerHTML = '<div class="alert alert-success alert-dismissible" role="alert"><i class="icon-thumbs-up"></i> ' + data + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+										divMae.append(wrapper)
+									} else {
+										wrapper.innerHTML = '<div class="alert alert-danger alert-dismissible" role="alert"><i class="icon-remove"></i> ' + data + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+										divMae.append(wrapper)
+									}
 								}
-							}
-						);
-
+							);
+						}
 					}
 				</script>

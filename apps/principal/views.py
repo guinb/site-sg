@@ -1,38 +1,119 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseServerError
 from django.shortcuts import render, redirect
 from django.contrib import auth, messages
 from django.core.mail import send_mail
-from .models import Contato, EmailNewsletter
+from .models import Contato, EmailNewsletter, MensagemContato
 
 def index(request):
-    return render(request, 'construcao.html')
-
+    dados = {
+        'titulo': 'Página Inicial',
+        'descricao': 'Consultoria estratégica de Marketing para empresas de turismo e intercâmbio',
+        'endereco': 'https://simpliglobal.com.br',
+        'robots': 'index,nofollow'
+    }
+    return render(request, 'index.html', context=dados)
+    
 def sobre(request):
-    return render(request, 'sobre.html')
+    dados = {
+        'titulo': 'Quem Somos',
+        'descricao': 'Uma empresa que tem como objetivo trazer resultados tangíveis para nossos clientes do setor de Turismo e Intercâmbio por meio de estratégias e soluções de marketing digital',
+        'endereco': 'https://simpliglobal.com.br/sobre',
+        'robots': 'index,nofollow'
+    }
+    return render(request, 'sobre.html', context=dados)
 
 def faqs(request):
-    return render(request, 'faqs.html')
+    dados = {
+        'titulo': 'FAQs',
+        'descricao': 'Respondemos todas suas duvidas',
+        'endereco': 'https://simpliglobal.com.br/faqs',
+        'robots': 'noindex,nofollow'
+    }
+    return render(request, 'faqs.html', context=dados)
 
 def contato(request):
-    return render(request, 'contato.html')
+    dados = {
+        'titulo': 'Contato',
+        'descricao': 'Entre em contato conosco e saiba o que podemos fazer pela sua empresa',
+        'endereco': 'https://simpliglobal.com.br/contato',
+        'robots': 'index,nofollow'
+    }
+    return render(request, 'contato.html', context=dados)
 
 def analise_empresa(request):
-    return render(request, 'analise_empresa.html')
+    dados = {
+        'titulo': 'Análise do cenário da empresa',
+        'descricao': 'Analisamos o cenário da empresa de nossos clientes como um todo, focando no aumento de lucratividade, utilizando ferramentas de marketing digital atuais que possam auxiliar na realização dessas metas',
+        'endereco': 'https://simpliglobal.com.br/analise-empresa',
+        'robots': 'index,nofollow'
+    }
+    return render(request, 'analise_empresa.html', context=dados)
 
 def gestao_trafego(request):
-    return render(request, 'gestao_trafego.html')
+    dados = {
+        'titulo': 'Gestão de Tráfego Pago',
+        'descricao': '',
+        'endereco': 'https://simpliglobal.com.br/gestao-trafego',
+        'robots': 'index,nofollow'
+    }
+    return render(request, 'gestao_trafego.html', context=dados)
 
 def identidade_visual(request):
-    return render(request, 'identidade_visual.html')
+    dados = {
+        'titulo': 'Identidade Visual',
+        'descricao': '',
+        'endereco': 'https://simpliglobal.com.br/identidade-visual',
+        'robots': 'index,nofollow'
+    }
+    return render(request, 'identidade_visual.html', context=dados)
 
 def criativos(request):
-    return render(request, 'criativos.html')
+    dados = {
+        'titulo': 'Criativos',
+        'descricao': '',
+        'endereco': 'https://simpliglobal.com.br/criativos',
+        'robots': 'index,nofollow'
+    }
+    return render(request, 'criativos.html', context=dados)
 
 def desenvolvimento_web(request):
-    return render(request, 'desenvolvimento_web.html')
+    dados = {
+        'titulo': 'Desenvolvimento WEB',
+        'descricao': '',
+        'endereco': 'https://simpliglobal.com.br/desenvolvimento-web',
+        'robots': 'index,nofollow'
+    }
+    return render(request, 'desenvolvimento_web.html', context=dados)
 
 def posts(request):
-    return render(request, 'posts.html')
+    dados = {
+        'titulo': 'POSTS',
+        'descricao': '',
+        'endereco': 'https://simpliglobal.com.br/posts',
+        'robots': 'index,nofollow'
+    }
+    return render(request, 'posts.html', context=dados)
+
+
+def politica_privacidade(request):
+    dados = {
+        'titulo': 'Política de Privacidade',
+        'descricao': 'Como tratamos seus dados',
+        'endereco': 'https://simpliglobal.com.br/politica-de-privacidade',
+        'robots': 'noindex,nofollow'
+    }
+    return render(request, 'politica_privacidade.html', context=dados)
+
+
+def termos_uso(request):
+    dados = {
+        'titulo': 'Termos de Uso',
+        'descricao': 'Termos de uso do nosso site',
+        'endereco': 'https://simpliglobal.com.br/termos-de-uso',
+        'robots': 'noindex,nofollow'
+    }
+    return render(request, 'termos_uso.html', context=dados)
+
 
 
 
@@ -58,3 +139,42 @@ def emailNewsletter(request):
         return HttpResponse('Cadastrado com sucesso!')
     else:
         return HttpResponse('Erro ao cadastrar!')
+
+def mensagemContato(request):
+    """Recebe mensagem no contato"""
+    if request.method == 'POST':
+        nova_mensagem = MensagemContato()
+        nova_mensagem.nome = request.POST['nome']
+        nova_mensagem.email = request.POST['email']
+        nova_mensagem.empresa = request.POST['empresa']
+        nova_mensagem.telefone = request.POST['telefone']
+        nova_mensagem.estado = request.POST['estado']
+        nova_mensagem.interesse = request.POST['interesse']
+        nova_mensagem.mensagem = request.POST['mensagem']
+        nova_mensagem.save()
+        return HttpResponse('Mensagem enviada com sucesso!')
+    else:
+        return HttpResponse('Erro ao enviar mensagem')
+
+
+
+def error_404(request, exception):
+    dados = {
+        'titulo': 'ERRO 404',
+        'descricao': 'Página não encontrada',
+        'endereco': 'https://simpliglobal.com.br/404',
+        'robots': 'noindex,nofollow'
+    }
+    return render(request, '404.html', context=dados)
+
+def error_403(request, exception):
+    dados = {
+        'titulo': 'ERRO 403',
+        'descricao': 'Acesso negado',
+        'endereco': 'https://simpliglobal.com.br/403',
+        'robots': 'noindex,nofollow'
+    }
+    return render(request, '403.html', context=dados)
+
+def error_500(request, exception=None):
+    return HttpResponseServerError('Erro no servidor', status=500)

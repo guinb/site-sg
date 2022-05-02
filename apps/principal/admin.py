@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contato, EmailNewsletter
+from .models import Contato, EmailNewsletter, MensagemContato
 
 class ListandoContatos(admin.ModelAdmin):
     list_display = ('id', 'nome', 'empresa', 'data', 'respondida')
@@ -17,5 +17,14 @@ class ListandoEmails(admin.ModelAdmin):
     list_editable = ('ativo',)
     list_per_page = 10
 
+class ListandoMensagensContato(admin.ModelAdmin):
+    list_display = ('nome', 'email', 'interesse', 'data', 'respondida',)
+    list_display_links = ('email', 'email',)
+    search_fields = ('nome', 'email', 'data', 'interesse',)
+    list_filter = ('interesse', 'data', 'respondida',)
+    list_editable = ('respondida',)
+    list_per_page = 10
+
 admin.site.register(Contato, ListandoContatos)
 admin.site.register(EmailNewsletter, ListandoEmails)
+admin.site.register(MensagemContato, ListandoMensagensContato)
