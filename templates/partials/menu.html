@@ -11,9 +11,9 @@
 						============================================= -->
 						<div class="top-links">
 							<ul class="top-links-container">
-								<li class="top-links-item"><a href="{% url 'index' %}">Home</a></li>
+								<!-- <li class="top-links-item"><a href="{% url 'index' %}">Home</a></li>
 								<li class="top-links-item"><a href="{% url 'sobre' %}">Quem somos</a></li>
-								<li class="top-links-item"><a href="{% url 'contato' %}">Contato</a></li>
+								<li class="top-links-item"><a href="{% url 'contato' %}">Contato</a></li> -->
 								<li class="top-links-item"><a href="#"><img src="{% static 'demos/seo/images/flags/br.png' %}" alt="Lang">Port</a>
 									<ul class="top-links-sub-menu">
 										<li class="top-links-item"><a href="#"><img src="{% static 'demos/seo/images/flags/eng2.png' %}" alt="Lang">English</a></li>
@@ -25,19 +25,33 @@
 
 					</div>
 
-					<div class="col-12 col-md-auto dark">
+					<div class="col-auto col-lg-3 order-lg-1 d-none d-md-flex px-0">
+						<div class="social-icons">
+							<a href="https://facebook.com/semicolonweb" class="social-icon si-rounded si-dark si-mini si-facebook" target="_blank">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+							<a href="https://twitter.com/__semicolon" class="social-icon si-rounded si-dark si-mini si-linkedin" target="_blank">
+								<i class="icon-linkedin"></i>
+								<i class="icon-linkedin"></i>
+							</a>
+							<a href=" https://instagram.com/semicolonweb" class="social-icon si-rounded si-dark si-mini si-instagram" target="_blank">
+								<i class="icon-instagram"></i>
+								<i class="icon-instagram"></i>
+							</a>
+						</div>
+					</div>
 
+					<div class="col-12 col-md-auto dark">
 						<!-- Top Social
-						============================================= -->
+						============================================= 
 						<ul id="top-social">
 							<li><a href="#" class="si-facebook" target="_blank"><span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span></a></li>
 							<li><a href="https://www.linkedin.com/company/simpliglobal" class="si-linkedin" target="_blank"><span class="ts-icon"><i class="icon-linkedin"></i></span><span class="ts-text">LinkedIn</span></a></li>
-							<!--<li><a href="https://twitter.com/__semicolon" class="si-twitter" target="_blank"><span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span></a></li>-->
-							<!--<li><a href="https://youtube.com/semicolonweb" class="si-youtube" target="_blank"><span class="ts-icon"><i class="icon-youtube"></i></span><span class="ts-text">Youtube</span></a></li>-->
 							<li><a href="#" class="si-instagram" target="_blank"><span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span></a></li>
 							<li><a href="tel:#" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+10.11.85412542</span></a></li>
 							<li><a href="mailto:#" class="si-email3"><span class="ts-icon"><i class="icon-envelope-alt"></i></span><span class="ts-text">info@canvas.com</span></a></li>
-						</ul><!-- #top-social end -->
+						</ul> #top-social end -->
 
 					</div>
 				</div>
@@ -86,7 +100,7 @@
 									<div class="mega-menu-content mega-menu-style-2 px-0">
 										<div class="container">
 											<div class="row">
-												<a href="{% url 'analise_empresa' %}" class="mega-menu-column sub-menu-container col-lg-4 border-bottom h-bg-light py-4">
+												<!-- <a href="{% url 'analise_empresa' %}" class="mega-menu-column sub-menu-container col-lg-4 border-bottom h-bg-light py-4">
 													<div class="feature-box">
 														<div class="fbox-icon mb-2">
 															<img src="{% static 'demos/seo/images/icons/analise-estrategica.svg' %}" alt="Feature Icon" class="bg-transparent rounded-0">
@@ -96,37 +110,26 @@
 															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, ipsa!</p>
 														</div>
 													</div>
-												</a>
+												</a> -->
 												<a href="{% url 'gestao_trafego' %}" class="mega-menu-column sub-menu-container col-lg-4 border-bottom h-bg-light py-4">
 													<div class="feature-box">
 														<div class="fbox-icon mb-2">
 															<img src="{% static 'demos/seo/images/icons/gestao-trafego.svg' %}" alt="Feature Icon" class="bg-transparent rounded-0">
 														</div>
 														<div class="fbox-content">
-															<h3 class="nott ls0">Gestão de tráfego pago e otimização de campanhas</h3>
-															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, ipsa!</p>
+															<h3 class="nott ls0">Gestão de Tráfego</h3>
+															<p>Trazemos os clientes mais qualificados para a sua agência</p>
 														</div>
 													</div>
 												</a>
-												<a href="{% url 'identidade_visual' %}" class="mega-menu-column sub-menu-container col-lg-4 border-bottom h-bg-light py-4">
+												<a href="{% url 'otimizacao_seo' %}" class="mega-menu-column sub-menu-container col-lg-4 border-bottom h-bg-light py-4">
 													<div class="feature-box">
 														<div class="fbox-icon mb-2">
-															<img src="{% static 'demos/seo/images/icons/identidade-visual.svg' %}" alt="Feature Icon" class="bg-transparent rounded-0">
+															<img src="{% static 'demos/seo/images/icons/analise-estrategica.svg' %}" alt="Feature Icon" class="bg-transparent rounded-0">
 														</div>
 														<div class="fbox-content">
-															<h3 class="nott ls0">Identidade visual</h3>
-															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, ipsa!</p>
-														</div>
-													</div>
-												</a>
-												<a href="{% url 'criativos' %}" class="mega-menu-column sub-menu-container col-lg-4 border-bottom h-bg-light py-4">
-													<div class="feature-box">
-														<div class="fbox-icon mb-2">
-															<img src="{% static 'demos/seo/images/icons/criativos.svg' %}" alt="Feature Icon" class="bg-transparent rounded-0">
-														</div>
-														<div class="fbox-content">
-															<h3 class="nott ls0">Criativos</h3>
-															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, ipsa!</p>
+															<h3 class="nott ls0">Otimização de SEO</h3>
+															<p>Fazemos seu site ter mais relevância na página de pesquisa do Google</p>
 														</div>
 													</div>
 												</a>
@@ -136,7 +139,40 @@
 															<img src="{% static 'demos/seo/images/icons/desenvolvimento-web.svg' %}" alt="Feature Icon" class="bg-transparent rounded-0">
 														</div>
 														<div class="fbox-content">
-															<h3 class="nott ls0">Desenvolvimento Web</h3>
+															<h3 class="nott ls0">Criação de Website</h3>
+															<p>Desenvolvemos utiliando as melhores ferramentas um site moderno e otimizado para responder bem em todos os dispositivos</p>
+														</div>
+													</div>
+												</a>
+												<a href="{% url 'google_meunegocio' %}" class="mega-menu-column sub-menu-container col-lg-6 border-bottom h-bg-light py-4">
+													<div class="feature-box">
+														<div class="fbox-icon mb-2">
+															<img src="{% static 'demos/seo/images/icons/criativos.svg' %}" alt="Feature Icon" class="bg-transparent rounded-0">
+														</div>
+														<div class="fbox-content">
+															<h3 class="nott ls0">Google Meu Negócio</h3>
+															<p>Configuramos o Google Meu Negócio da sua agência para que ela seja encontrada mais facilmente por potenciais clientes															</p>
+														</div>
+													</div>
+												</a>
+												<a href="{% url 'identidade_visual' %}" class="mega-menu-column sub-menu-container col-lg-6 border-bottom h-bg-light py-4">
+													<div class="feature-box">
+														<div class="fbox-icon mb-2">
+															<img src="{% static 'demos/seo/images/icons/identidade-visual.svg' %}" alt="Feature Icon" class="bg-transparent rounded-0">
+														</div>
+														<div class="fbox-content">
+															<h3 class="nott ls0">Identidade Visual & Logomarca</h3>
+															<p>Entregamos uma identidade visual que condiga com os serviços prestados pela sua agência</p>
+														</div>
+													</div>
+												</a>
+												<!-- <a href="{% url 'criativos' %}" class="mega-menu-column sub-menu-container col-lg-4 border-bottom h-bg-light py-4">
+													<div class="feature-box">
+														<div class="fbox-icon mb-2">
+															<img src="{% static 'demos/seo/images/icons/criativos.svg' %}" alt="Feature Icon" class="bg-transparent rounded-0">
+														</div>
+														<div class="fbox-content">
+															<h3 class="nott ls0">Criativos</h3>
 															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, ipsa!</p>
 														</div>
 													</div>
@@ -151,7 +187,7 @@
 															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, ipsa!</p>
 														</div>
 													</div>
-												</a>
+												</a> -->
 												<div class="mega-menu-column sub-menu-container col-12 p-0">
 													<a href="{% url 'sobre' %}" class="button button-rounded button-large nott ls0 w-100 text-center m-0 rounded-0 py-3 button-light ">Saiba Mais <i class="icon-line-arrow-right"></i></a>
 												</div>

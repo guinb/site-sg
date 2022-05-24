@@ -51,7 +51,7 @@ def analise_empresa(request):
 
 def gestao_trafego(request):
     dados = {
-        'titulo': 'Gestão de Tráfego Pago',
+        'titulo': 'Gestão de Tráfego',
         'descricao': '',
         'endereco': 'https://simpliglobal.com.br/gestao-trafego',
         'robots': 'index,nofollow'
@@ -60,7 +60,7 @@ def gestao_trafego(request):
 
 def identidade_visual(request):
     dados = {
-        'titulo': 'Identidade Visual',
+        'titulo': 'Identidade Visual & Logomarca',
         'descricao': '',
         'endereco': 'https://simpliglobal.com.br/identidade-visual',
         'robots': 'index,nofollow'
@@ -78,12 +78,32 @@ def criativos(request):
 
 def desenvolvimento_web(request):
     dados = {
-        'titulo': 'Desenvolvimento WEB',
+        'titulo': 'Criação de Website',
         'descricao': '',
         'endereco': 'https://simpliglobal.com.br/desenvolvimento-web',
         'robots': 'index,nofollow'
     }
     return render(request, 'desenvolvimento_web.html', context=dados)
+
+
+def otimizacao_seo(request):
+    dados = {
+        'titulo': 'Otimização de SEO',
+        'descricao': '',
+        'endereco': 'https://simpliglobal.com.br/otimizacao-seo',
+        'robots': 'index,nofollow'
+    }
+    return render(request, 'otimizacao_seo.html', context=dados)
+
+
+def google_meunegocio(request):
+    dados = {
+        'titulo': 'Google Meu Negócio',
+        'descricao': '',
+        'endereco': 'https://simpliglobal.com.br/google-meu-negocio',
+        'robots': 'index,nofollow'
+    }
+    return render(request, 'google_meunegocio.html', context=dados)
 
 def posts(request):
     dados = {

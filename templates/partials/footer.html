@@ -14,7 +14,7 @@
 
 								<img src="{% static 'images/footer-widget-logo.png' %}" alt="Footer Logo" class="alignleft" style="margin-top: 8px; padding-right: 18px; border-right: 1px solid #DDD;">
 
-								<p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards with a Retina &amp; Responsive Approach. Browse the amazing Features this template offers.</p>
+								<p class="pt-4"><strong>Marketing Digital</strong> para agências de <strong>Turismo</strong> &amp; <strong>Intercâmbio</strong></p>
 
 								<div class="line line-sm"></div>
 
@@ -22,22 +22,21 @@
 
 									<div class="col-lg-4 col-8 bottommargin-sm widget_links">
 										<ul>
-											<li><a href="{% url 'analise_empresa' %}">Análise estratégica</a></li>
-											<li><a href="{% url 'criativos' %}">Criativos</a></li>
-										</ul>
-									</div>
-
-									<div class="col-lg-4 col-8 bottommargin-sm widget_links">
-										<ul>
 											<li><a href="{% url 'gestao_trafego' %}">Gestão de Tráfego</a></li>
-											<li><a href="{% url 'desenvolvimento_web' %}">Desenvolvimento Web</a></li>
+											<li><a href="{% url 'google_meunegocio' %}">Google Meu Negócio</a></li>
 										</ul>
 									</div>
 
 									<div class="col-lg-4 col-8 bottommargin-sm widget_links">
 										<ul>
-											<li><a href="{% url 'identidade_visual' %}">Identidade Visual</a></li>
-											<li><a href="{% url 'posts' %}">Posts</a></li>
+											<li><a href="{% url 'otimizacao_seo' %}">Otimização de SEO</a></li>
+											<li><a href="{% url 'identidade_visual' %}">Identidade Visual & Logomarca</a></li>
+										</ul>
+									</div>
+
+									<div class="col-lg-4 col-8 bottommargin-sm widget_links">
+										<ul>
+											<li><a href="{% url 'desenvolvimento_web' %}">Criação de Website</a></li>
 										</ul>
 									</div>
 								</div>
@@ -47,7 +46,7 @@
 						<div class="col-md-4">
 
 							<div class="widget subscribe-widget clearfix">
-								<h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
+								<h5><strong>Inscreva-se</strong> em nossa newsletter &amp; fique por dentro de todas as novidades:</h5>
 								<div class="position-relative top-50 start-50 translate-middle position-relative" id="alerta-footer"></div>
 								<form id="form-newsletter" action="" method="post" class="mb-0">
 									{% csrf_token %}
@@ -98,7 +97,7 @@
 
 						<div class="col-12 col-lg-auto text-center text-lg-end">
 							<div class="copyrights-menu copyright-links clearfix">
-								<a href="{% url 'index' %}">Home</a>/<a href="{% url 'sobre' %}">Quem Somos</a>/<a href="#">Soluções</a>/<a href="{% url 'contato' %}">Contato</a>
+								<a href="{% url 'index' %}">Home</a>/<a href="{% url 'sobre' %}">Quem Somos</a>/<a href="{% url 'contato' %}">Contato</a>
 							</div>
 						</div>
 					</div>
