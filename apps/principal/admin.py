@@ -18,8 +18,8 @@ class ListandoEmails(admin.ModelAdmin):
     list_per_page = 10
 
 class ListandoMensagensContato(admin.ModelAdmin):
-    list_display = ('nome', 'email', 'interesse', 'data', 'respondida',)
-    list_display_links = ('email', 'email',)
+    list_display = ('nome', 'email', 'interesse', 'data', 'forma_contato', 'respondida',)
+    list_display_links = ('nome', 'email',)
     search_fields = ('nome', 'email', 'data', 'interesse',)
     list_filter = ('interesse', 'data', 'respondida',)
     list_editable = ('respondida',)

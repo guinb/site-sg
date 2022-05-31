@@ -161,20 +161,21 @@ def emailNewsletter(request):
         return HttpResponse('Erro ao cadastrar!')
 
 def mensagemContato(request):
-    """Recebe mensagem no contato"""
+    """Recebe formulario da pagina contato"""
     if request.method == 'POST':
         nova_mensagem = MensagemContato()
         nova_mensagem.nome = request.POST['nome']
         nova_mensagem.email = request.POST['email']
         nova_mensagem.empresa = request.POST['empresa']
         nova_mensagem.telefone = request.POST['telefone']
-        nova_mensagem.estado = request.POST['estado']
         nova_mensagem.interesse = request.POST['interesse']
+        nova_mensagem.forma_contato = request.POST['forma']
         nova_mensagem.mensagem = request.POST['mensagem']
         nova_mensagem.save()
         return HttpResponse('Mensagem enviada com sucesso!')
     else:
         return HttpResponse('Erro ao enviar mensagem')
+
 
 
 
